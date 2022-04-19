@@ -16,3 +16,17 @@ df = pd.DataFrame({"X": X, "y": y})
 
 # Show the first five rows of our dataframe
 print(df.head())
+
+# Calculate the mean of X and y
+xmean = np.mean(X)
+ymean = np.mean(y)
+
+# Calculate the terms needed for the numator and denominator of beta
+df['xycov'] = (df['X'] - xmean) * (df['y'] - ymean)
+df['xvar'] = (df['X'] - xmean)**2
+
+# Calculate beta and alpha
+beta = df['xycov'].sum() / df['xvar'].sum()
+alpha = ymean - (beta * xmean)
+print(f'alpha = {alpha}')
+print(f'beta = {beta}')
