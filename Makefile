@@ -52,3 +52,6 @@ include base.mk
 
 demo:
 	python demo.py
+
+d2:
+	python demo2.py
