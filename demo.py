@@ -1,5 +1,6 @@
-import pymc3 as pm
 import csv
+
+import pymc3 as pm
 import requests
 
 # Via https://stackoverflow.com/a/35371451
