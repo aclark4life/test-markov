@@ -30,3 +30,16 @@ beta = df['xycov'].sum() / df['xvar'].sum()
 alpha = ymean - (beta * xmean)
 print(f'alpha = {alpha}')
 print(f'beta = {beta}')
+
+ypred = alpha + beta * X
+print(ypred)
+
+# Plot regression against actual data
+plt.figure(figsize=(12, 6))
+plt.plot(X, ypred)     # regression line
+plt.plot(X, y, 'ro')   # scatter plot showing actual data
+plt.title('Actual vs Predicted')
+plt.xlabel('X')
+plt.ylabel('y')
+
+plt.show()
