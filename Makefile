@@ -53,5 +53,9 @@ include base.mk
 demo:
 	python demo.py
 
-d2:
+demo2:
 	python demo2.py
+
+
+.PHONE d2:
+d2: demo2
