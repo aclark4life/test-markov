@@ -4,7 +4,7 @@ import pymc3 as pm
 import requests
 
 # Via https://stackoverflow.com/a/35371451
-CSV_URL = "https://github.com/Kaushik-Varma/linear_regression_model_python/blob/main/Company_data.csv"
+CSV_URL = "https://raw.githubusercontent.com/Kaushik-Varma/linear_regression_model_python/main/Company_data.csv"
 with requests.Session() as s:
     download = s.get(CSV_URL)
 
