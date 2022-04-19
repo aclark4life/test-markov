@@ -12,22 +12,26 @@ with requests.Session() as s:
 
     cr = csv.reader(decoded_content.splitlines(), delimiter=",")
     my_list = list(cr)
+    count = 0
     for row in my_list:
-        print(row)
+        count += 1
 
 
-# Via https://docs.pymc.io/en/v3/
-X, y = linear_training_data()
-with pm.Model() as linear_model:
-    weights = pm.Normal("weights", mu=0, sigma=1)
-    noise = pm.Gamma("noise", alpha=2, beta=1)
-    y_observed = pm.Normal(
-        "y_observed",
-        mu=X @ weights,
-        sigma=noise,
-        observed=y,
-    )
+        # Via https://docs.pymc.io/en/v3/
+        # x, y = linear_training_data()
+        if count > 1:
+            print(row)
+            x, y = row[0], row[1]
+            with pm.Model() as linear_model:
+                weights = pm.Normal("weights", mu=0, sigma=1)
+                noise = pm.Gamma("noise", alpha=2, beta=1)
+                y_observed = pm.Normal(
+                    "y_observed",
+                    mu=x @ weights,
+                    sigma=noise,
+                    observed=y,
+                )
 
-    prior = pm.sample_prior_predictive()
-    posterior = pm.sample()
-    posterior_pred = pm.sample_posterior_predictive(posterior)
+                prior = pm.sample_prior_predictive()
+                posterior = pm.sample()
+                posterior_pred = pm.sample_posterior_predictive(posterior)
