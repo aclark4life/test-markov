@@ -20,7 +20,7 @@ def demo():
 
             # Via https://docs.pymc.io/en/v3/
             # x, y = linear_training_data()
-            if count > 1 < 3:
+            if count > 1 and count < 3:
                 print(row)
                 x, y = row[0], row[1]
                 x = float(x)
