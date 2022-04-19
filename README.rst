@@ -9,4 +9,4 @@ Via https://towardsdatascience.com/introduction-to-linear-regression-in-python-c
 
 Linear regression is a basic predictive analytics technique that uses historical data to predict an output variable. It is popular for predictive modelling because it is easily understood and can be explained using plain English.
 
-.. image:: screenshot.gif
+.. image:: screenshot2.gif
