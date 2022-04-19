@@ -26,3 +26,5 @@ Linear regression is a basic predictive analytics technique that uses historical
     There were 72 divergences after tuning. Increase `target_accept` or reparameterize.
     There were 36 divergences after tuning. Increase `target_accept` or reparameterize.
 
+
+.. image:: screenshot.gif
