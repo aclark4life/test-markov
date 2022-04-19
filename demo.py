@@ -22,6 +22,8 @@ with requests.Session() as s:
         if count > 1:
             print(row)
             x, y = row[0], row[1]
+            x = float(x)
+            y = float(y)
             with pm.Model() as linear_model:
                 weights = pm.Normal("weights", mu=0, sigma=1)
                 noise = pm.Gamma("noise", alpha=2, beta=1)
